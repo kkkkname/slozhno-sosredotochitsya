@@ -54,7 +54,6 @@
     display: var(--bulb);
 }
 
-/*nav-bar*/
 .header__theme-menu {
     display: grid;
     justify-content: end;
