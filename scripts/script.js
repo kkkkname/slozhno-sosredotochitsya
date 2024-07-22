@@ -1,3 +1,5 @@
+// noinspection JSCheckFunctionSignatures
+
 const themeButtons = document.querySelectorAll('.header__theme-menu-button');
 
 themeButtons.forEach((button) => {
