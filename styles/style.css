@@ -26,8 +26,9 @@
 
 .header__bulb {
   display: flex;
+  position: absolute;
   gap: 3px;
-  justify-content: flex-end;
+  justify-self: flex-end;
 }
 
 .header__bulb::before {
@@ -35,20 +36,19 @@
   text-transform: uppercase;
   color: var(--accent-color, #ff0070);
   line-height: 25px;
-  margin-right: 28px;
+  margin-right: 10px;
 }
 
 .header__bulb::after {
   content: "";
-  position: absolute;
   vertical-align: middle;
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  flex-shrink: 0;
   background: #ff0070;
   box-shadow: 0 0 4px 2px var(--accent-color);
-  margin: 8px 8px 0 10px;
+  margin-top: 8px;
+  margin-right: 8px;
   display: var(--bulb);
 }
 
@@ -61,6 +61,8 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  justify-self: end;
+  align-self: center;
 }
 
 .header__theme-menu-button {
@@ -232,7 +234,7 @@
   font-size: inherit;
 }
 
-@media (width >= 768px) {
+@media (min-width: 768px) {
   .content {
     padding: 0 20px;
     margin-block-end: 60px;
@@ -243,16 +245,16 @@
   }
   .header {
     padding: 20px;
-    grid-template-rows: 170px 273px 260px 254px;
+    grid-template-rows: 1fr min-content 1fr;
     min-height: 1024px;
   }
   .header__title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-    transform: translateX(-20px);
+    transform: translate(-20px, 15px);
   }
   .header__title-decor {
     max-inline-size: 364px;
-    margin-block-end: calc(183px - 20px);
+    margin-block-end: calc(183px - 44px);
   }
   .content__block:not(:last-of-type),
   .content__block-other {
@@ -320,9 +322,9 @@
   }
 }
 
-@media (width >= 1024px) {
+@media (min-width: 1024px) {
   .header {
-    grid-template-rows: 0 300px 243px 160px;
+    grid-template-rows: 1fr min-content 1fr;
     min-height: 100%;
   }
   .header__title {
@@ -330,10 +332,11 @@
   }
   .header__theme-menu {
     justify-content: center;
+    align-self: start;
   }
   .header__title-decor {
     max-inline-size: 491px;
-    margin-block-end: calc(134px - 20px);
+    margin-block-end: calc(134px - 43px);
   }
   .header__theme-menu-list {
     flex-direction: row;
