@@ -11,11 +11,11 @@
   background-attachment: fixed;
 }
 
+/* header start */
+
 .header {
   display: grid;
-  grid-template-columns: 1fr;
   grid-template-rows: 1fr min-content 1fr;
-  min-height: 668px;
   height: 100vh;
   padding: 10px;
 }
@@ -27,7 +27,6 @@
 .header__bulb {
   display: flex;
   position: absolute;
-  gap: 3px;
   justify-self: flex-end;
 }
 
@@ -41,7 +40,6 @@
 
 .header__bulb::after {
   content: "";
-  vertical-align: middle;
   width: 9px;
   height: 9px;
   border-radius: 50%;
@@ -61,7 +59,6 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  justify-self: end;
   align-self: center;
 }
 
@@ -69,7 +66,7 @@
   background-color: inherit;
   text-transform: lowercase;
   color: var(--button-color, #ff0070);
-  border: 0;
+  border: transparent 1px solid;
   width: 70px;
   height: 26px;
   cursor: pointer;
@@ -99,6 +96,7 @@
   color: var(--title-color, #db00ff);
   text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
   line-height: 0.825;
+  transform: translate(2px, 15px);
 }
 
 .decorated-zone::before {
@@ -128,8 +126,10 @@
   font-weight: 700;
   line-height: 23px;
   margin-block-start: auto;
-  margin-block-end: calc(66px - 10px);
+  margin-block-end: calc(66px - 34px);
 }
+
+/* header end */
 
 .content__block-title {
   color: var(--title-accent-color, #ff0070);
